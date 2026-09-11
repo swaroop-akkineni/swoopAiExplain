@@ -27,7 +27,12 @@ function luminance(hex) {
     .map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4);
   return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
 }
-for (const [foreground, background] of [['252a26','faf9f5'], ['62685f','faf9f5'], ['62685f','edf0e8'], ['254f40','edf0e8'], ['ffffff','254f40']]) {
+const css = fs.readFileSync(`${__dirname}/style.css`, 'utf8');
+assert(css.includes('prefers-reduced-motion:reduce'), 'Respect reduced motion');
+for (const [foreground, background] of [
+  ...['fffdf4','fff08a','ffb4cf','cbb8ff','a5edcd','efe9f7','f6ecfa'].map(bg => ['232124', bg]),
+  ['47424c','fffdf4'], ['47424c','cbb8ff'], ['58408c','ffb9bb'], ['58408c','ffe870'], ['fffdf4','232124'],
+]) {
   const values = [luminance(foreground), luminance(background)].sort((a,b) => b-a);
-  assert((values[0] + .05) / (values[1] + .05) >= 4.5, 'Text contrast must reach 4.5:1');
+  assert((values[0] + .05) / (values[1] + .05) >= 4.5, `Text contrast ${foreground} on ${background} must reach 4.5:1`);
 }
