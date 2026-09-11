@@ -13,7 +13,7 @@ for (const concept of ['agent', 'skill', 'connector', 'subagent']) {
   assert(ids.includes(`concept-${concept}`), `Missing concept ${concept}`);
 }
 
-assert.deepEqual([...html.matchAll(/<section id="([^"]+)"/g)].map(match => match[1]), ['concepts', 'travel']);
+assert.deepEqual([...html.matchAll(/<section id="([^"]+)"/g)].map(match => match[1]), ['concepts', 'travel', 'working-together']);
 assert(!/<script\b|class="copy"/.test(html), 'Native controls need no script');
 for (const [, id] of html.matchAll(/aria-controls="([^"]+)"/g)) assert(ids.includes(id), `Missing controlled panel ${id}`);
 assert.match(html, /conversation and prices below are made up/);

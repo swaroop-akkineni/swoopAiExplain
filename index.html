@@ -6,7 +6,7 @@
   <meta name="description" content="A friendly guide to using AI in everyday life. Learn about agents, skills, subagents, and connectors—with a simple travel-agent example.">
   <meta name="theme-color" content="#fff08a">
   <title>AI, explained by swoop</title>
-  <link rel="stylesheet" href="style.css?v=modern-2">
+  <link rel="stylesheet" href="style.css?v=helpers-1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to guide</a>
@@ -34,6 +34,7 @@
   <section id="travel" class="chapter">
     <div class="chapter-heading"><div><p class="eyebrow">THE FOUR IDEAS, WORKING TOGETHER</p><h2>Example:<br>a <span>travel agent.</span></h2><p>You describe the trip in a text conversation. The agent asks what’s missing, searches through connected tools, and brings back options that fit.</p></div></div>
     <p class="small">A worked example: the conversation and prices below are made up to show how the pieces work together.</p>
+    <p class="small">This example shows where helpers could fit. One agent could also do this flight comparison itself. <a href="#working-together">So when would you use helpers?</a></p>
     <div class="travel-example">
       <div class="conversation" aria-label="Example conversation with a travel agent"><div class="chat-top"><span class="chat-avatar" aria-hidden="true">✳</span><div><strong>Your travel agent</strong><small>Example conversation</small></div><span class="chat-dots" aria-hidden="true">•••</span></div>
         <div class="message from-you"><p class="speaker">YOU</p><p>“Help me find a good flight deal from New York to Lisbon.”</p></div>
@@ -62,6 +63,65 @@
       <p><a href="https://soar.flights/mcp">Soar’s MCP documentation</a> provides a real flight-search connection example. Its <a href="https://soar.flights/blog/soar/how-soar-searches-flights">flight-search explanation</a> (updated September 7, 2026) describes comparison and offer checks. A working travel agent needs its own supported integrations, permissions, and booking controls. Soar documents <a href="https://soar.flights/blog/soar/how-soar-agent-booking-works">booking as a separate flow with user approval</a> (published September 2, 2026). This page is an explanation and does not run searches or make bookings.</p>
       <p class="small">Primary sources checked September 10, 2026. The reusable skill and subagent roles above are a proposed design, not a claim that Google or Soar implements this exact workflow.</p>
     </details>
+  </section>
+  <section id="working-together" class="chapter">
+    <div class="chapter-heading"><div><p class="eyebrow">LET’S TALK ABOUT THE HELPERS</p><h2>Could one agent<br>do it all?</h2><p>Often, yes! An agent can work through many steps on its own. Helpers are optional: use them when dividing the work is useful.</p></div></div>
+    <div class="helper-reading">
+      <p>For two flight options, one agent can compare the prices, bags, and arrival times. Now imagine researching a whole family trip: places to stay, activities, and everyone’s needs. There may be enough separate research to share out.</p>
+      <p>Helpers can investigate different things at the same time, each keeping its own working notes and reporting back. But explaining the assignments and checking their answers takes effort too. More helpers do not automatically mean a better answer. <a class="cite" href="https://www.anthropic.com/engineering/multi-agent-research-system">How this works in practice ↗</a></p>
+      <h3>Same kind of agent. Different responsibility.</h3>
+      <p>The <strong>lead agent</strong> keeps track of the whole request. A <strong>subagent</strong> is another agent given a piece of it. “Sub” describes who it reports to, not how clever it is. Calling it a specialist does not guarantee that its answers are right.</p>
+      <h3>Start with the result you want.</h3>
+      <p>Before choosing helpers, describe what a good finished answer would look like. For this new example:</p>
+      <p class="trip-example">“Find a hotel and two activities for our family’s three-night Lisbon stay. We’ll reach the hotel at 10 p.m. Keep the hotel and activities within US$650 altogether. Bring us a plan to review.”</p>
+      <p>The lead first confirms the dates, who’s traveling, and any access needs. Then it can give two helpers the same trip details and different assignments.</p>
+      <p class="small">The assignments, prices, and results below are made up. The US$650 covers only the hotel and activities.</p>
+    </div>
+    <figure class="helper-flow">
+      <figcaption>One request → two investigations → one checked plan</figcaption>
+      <div class="flow-lead"><strong>Lead agent</strong><p>Keeps the family’s dates, needs, arrival time, and total budget.</p></div>
+      <p class="flow-direction">↓ Gives each helper a clear assignment</p>
+      <div class="helper-pair">
+        <div><h3>Hotel helper</h3><p>“Find two suitable hotels for our dates and family. Aim for US$500 or less for all three nights. Check late arrival. Return total prices, links, and anything uncertain.”</p><p><strong>Reports back:</strong> Hotel A costs US$420, but check-in closes at 9 p.m. Hotel B costs US$480 and accepts arrival at 10 p.m.</p></div>
+        <div><h3>Activities helper</h3><p>“Find two activities for our dates and family. Aim for US$150 combined. Return times, locations, total prices, links, and anything uncertain.”</p><p><strong>Reports back:</strong> Two suitable activities cost US$140 altogether. Here are their times and locations.</p></div>
+      </div>
+      <p class="flow-direction">↓ Returns findings to the lead</p>
+      <div class="flow-lead"><strong>Lead agent checks the combination</strong><p>Do the hotel, activities, arrival time, and total budget work together?</p></div>
+    </figure>
+    <div class="helper-reading">
+      <p><strong>Pause here: would you choose the cheaper hotel?</strong></p>
+      <details><summary>See how the lead brings it together</summary>
+        <p>Hotel A closes check-in an hour before the family arrives. The lead rules it out unless late arrival can be confirmed.</p>
+        <p>Hotel B plus the activities costs <strong>US$480 + US$140 = US$620</strong>, leaving US$30. The lead also checks that the activity times and travel from the hotel fit. If they do, it has a plan to recommend.</p>
+        <p>If something clashes, it asks for a specific change: “Find an activity we can reach from Hotel B by 10 a.m.” It checks the revised answer before presenting the plan. Simply pasting the two reports together would miss this work.</p>
+      </details>
+      <h3>How do you decide what to hand over?</h3>
+      <p>Try three questions:</p>
+      <ul>
+        <li><strong>Can I explain the piece clearly?</strong> “Find two hotels with these requirements” gives a helper a finish line.</li>
+        <li><strong>Can it make progress separately?</strong> Hotel and activity research can start together once the dates and destination are fixed. The final schedule needs both results.</li>
+        <li><strong>Will sharing it help enough?</strong> A broad search might benefit. Comparing two listings already in front of you probably does not.</li>
+      </ul>
+      <p>There’s no magic number of steps that becomes “too much.” If one agent keeps missing requirements or takes too long, first clarify the task. Then consider a helper for a well-defined part. If the parts need constant back-and-forth, keep them together.</p>
+      <details><summary>How do you actually set this up?</summary>
+        <p><strong>In an app that supports helpers, some setup may already be done for you.</strong> You describe the goal and constraints; the app may let its lead agent decide what to delegate. Other apps let someone define reusable helpers beforehand.</p>
+        <p>Whoever sets up a helper gives it a job description, the information it needs, the tools it may use, and what to return. For our hotel helper, that means the trip brief, search access, and a short list with prices and evidence. A request to “use helpers” cannot add a feature the app does not support.</p>
+        <p><strong>Orchestration means coordinating that work:</strong> assigning tasks, waiting for results, passing on relevant details, asking for corrections, and checking the finished answer. The app can follow a preset order or let the lead choose the next step.</p>
+        <p>The lead must pass along relevant details; helpers may not see your whole conversation. If a helper cannot find or confirm something, it should report that gap. Searching for a hotel also does not give it permission to book.</p>
+      </details>
+      <h3>Try it with something familiar.</h3>
+      <p>For a family reunion, one helper researches venues and another researches catering. Both return good options. <strong>What would you check before combining them?</strong></p>
+      <details><summary>One thing the lead should catch</summary><p>Does the venue allow outside catering? If it doesn’t, the two recommendations may not work together. The lead needs an allowed caterer or a different venue. If catering depends entirely on the chosen venue, choose the venue first.</p></details>
+      <p class="takeaway">Start with one agent. Give helpers clear pieces when useful. Check that the pieces work together.</p>
+      <details class="research"><summary>The research behind this explanation</summary>
+        <p><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic’s Building effective agents</a> (December 2024) recommends starting simply and explains fixed workflows and dynamic coordination.</p>
+        <p><a href="https://www.anthropic.com/engineering/multi-agent-research-system">Anthropic’s research-system account</a> (June 2025) describes separate investigations and their coordination costs. Its results concern that system, not every task.</p>
+        <p><a href="https://arxiv.org/html/2512.08296v3">Towards a Science of Scaling Agent Systems</a> (April 2026 revision) finds that the usefulness of teams depends on the task. Some tested tasks improved; others got worse.</p>
+        <p><a href="https://arxiv.org/html/2503.13657v3">Why Do Multi-Agent LLM Systems Fail?</a> (October 2025 revision) documents coordination and checking failures. <a href="https://code.claude.com/docs/en/sub-agents">Claude’s subagent documentation</a> provides one real example of helper setup; details vary by app.</p>
+        <p><a href="https://ies.ed.gov/ncee/wwc/PracticeGuide/1">The Institute of Education Sciences learning guide</a> (2007) supports worked examples, graphics with explanations, and practice. This lesson applies those ideas; it has not been tested with readers.</p>
+        <p class="small">Sources checked September 11, 2026. This is an illustrated explanation, not a working travel service.</p>
+      </details>
+    </div>
   </section>
 </main>
 <footer><a href="#">Back to the beginning ↑</a></footer>
