@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A friendly guide to using AI in everyday life. Learn about Claude, Astra, agents, skills, subagents, and connectors—with examples you can actually try.">
+  <meta name="description" content="A friendly guide to using AI in everyday life. Learn about agents, skills, subagents, and connectors—with examples you can actually try.">
   <meta name="theme-color" content="#254f40">
   <title>AI, explained by swoop</title>
   <link rel="stylesheet" href="style.css">
@@ -19,7 +19,7 @@
   <section class="hero" aria-labelledby="title">
     <div>
       <h1 id="title">A little less mystery.<br>A lot more <em>“oh, I get it.”</em></h1>
-      <p class="intro">AI can help with the everyday stuff. Let’s learn how to ask for help, what all the new words mean, and where you stay in charge.</p>
+      <p class="intro">Agents, skills, subagents, and connectors: four ideas that explain how AI can help with everyday tasks. Let’s make sense of them with a family trip—and see where you stay in charge.</p>
       <a class="button" href="#start">Let’s start simple <span aria-hidden="true">↓</span></a>
       <p class="small">For the curious cousins. No technical background needed.</p>
     </div>
@@ -34,7 +34,7 @@
   </section>
 
   <nav class="roadmap" aria-label="Learning path">
-    <a href="#start"><span>01</span> Pick an app</a>
+    <a href="#start"><span>01</span> Start with a task</a>
     <a href="#ask"><span>02</span> Ask a good question</a>
     <a href="#concepts"><span>03</span> Meet the tools</a>
     <a href="#connectors"><span>04</span> Connect your apps</a>
@@ -44,14 +44,8 @@
   <aside class="learning-goals" aria-labelledby="goals-title"><h2 id="goals-title">By the end, you’ll be able to…</h2><ul><li>Ask AI for something useful and improve the answer.</li><li>Explain agents, skills, subagents, and connectors in your own words.</li><li>Choose what to share, what to approve, and what to double-check.</li></ul><p class="small">Take one section at a time. The extra details are there when you want them.</p></aside>
 
   <section id="start" class="chapter">
-    <div class="chapter-heading"><span class="number">01</span><div><h2>Start with one app.</h2><p>You don’t need to learn them all. Pick one and have a conversation.</p></div></div>
-    <div class="prose"><p>Think of an AI assistant as a flexible helper for explaining, drafting, and organizing. You give it a request; it creates a response using what it has learned and the information available in the conversation. A <strong>model</strong> is the underlying AI. The <strong>app</strong> is where you use it. The tools available in that app determine whether it can search, read a file, or take an action.</p><p>It can sound confident and still get things wrong—even quotes and sources. Treat its answer as something to review. <a class="cite" href="https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on">Why mistakes happen ↗</a></p></div>
-    <div class="app-grid">
-      <article><h3>Claude</h3><p class="muted">From Anthropic</p><p>Open Claude, sign in, and type a request. Continue in the same chat to refine the answer. You can use the web, desktop, or mobile app. Claude requires users to be 18 or older.</p><p class="suggestion">First try: “Help me write a warm thank-you message. Ask me who it’s for.”</p><a class="text-link" href="https://claude.ai/">Open Claude ↗</a> <a class="cite" href="https://support.claude.com/en/articles/8114491-get-started-with-claude">Getting started</a></article>
-      <article><h3>ChatGPT &amp; Astra</h3><p class="muted">From OpenAI</p><p>Open ChatGPT and start a chat. Use Chat for conversation, or Work for a finished deliverable. <strong>GPT-6 Astra is a model</strong> available in supported experiences; access depends on your account and rollout. In Work, check the model or Power selector for Astra. If it isn’t offered, use the available default; these lessons still apply.</p><p class="suggestion">First try: “Explain this confusing paragraph in everyday language: [paste text].”</p><a class="text-link" href="https://chatgpt.com/">Open ChatGPT ↗</a> <a class="cite" href="https://learn.chatgpt.com/docs/quickstart">Getting started</a> · <a class="cite" href="https://learn.chatgpt.com/docs/models">Astra access</a></article>
-
-    </div>
-    <p class="small">Check each app’s age rules, supported locations, and account requirements. Features and menus change; the official guides above are the place to check.</p>
+    <div class="chapter-heading"><span class="number">01</span><div><h2>Start with a task.</h2><p>Think of something you’d like help with, such as organizing a family trip.</p></div></div>
+    <div class="prose"><p>Think of an AI assistant as a flexible helper for explaining, drafting, and organizing. You give it a request; it creates a response using what it has learned and the information available in the conversation. The tools available in your AI app determine whether it can search, read a file, or take an action. An agent can work through the steps, a skill provides a reusable method, a subagent handles a smaller task, and a connector provides access to another app. We’ll explore each one below.</p><p>It can sound confident and still get things wrong—even quotes and sources. Treat its answer as something to review. <a class="cite" href="https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on">Why mistakes happen ↗</a></p></div>
   </section>
 
   <section id="ask" class="chapter">
@@ -80,7 +74,6 @@
     <p class="small">This is an illustrative example, not a running agent or a promise that every app supports this workflow.</p>
     <details><summary>Do I need all four to use AI?</summary><p>No. A regular conversation is enough for drafting a message or explaining an idea. Add tools when the task needs them. Agents can take longer and consume more usage; a team of agents is most useful when the work splits into meaningful independent parts. <a class="cite" href="https://www.anthropic.com/engineering/building-effective-agents">When to use agents</a> · <a class="cite" href="https://www.anthropic.com/engineering/multi-agent-research-system">Delegation tradeoffs</a></p></details>
     <details><summary>How would I actually try a skill?</summary><p>In Claude, look under <strong>Customize → Skills</strong> to browse available skills. Try a trusted one relevant to your task, such as creating a document. Simple custom skills can use written instructions; advanced ones can contain code. Read what you install and use sources you trust. <a class="cite" href="https://support.claude.com/en/articles/12512176-what-are-skills">Current skill guide</a> · <a class="cite" href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Skill security</a></p></details>
-    <details><summary>Can I use skills with ChatGPT/Astra too?</summary><p>Yes, in supported ChatGPT experiences. A skill supplies reusable instructions; a <strong>plugin</strong> can bundle skills with connected tools. Browse the Plugins area for an existing option. To create a simple skill, use <strong>@skill-creator</strong> and describe a task you repeat, its steps, and the result you want. Review and try the skill before relying on it. <a class="cite" href="https://learn.chatgpt.com/docs/skills-and-plugins">OpenAI’s skills guide ↗</a></p></details>
     <details><summary>And what is MCP?</summary><p>Model Context Protocol is a standard that helps AI tools connect to other tools and data. Think of it as a shared way for the connection to work. You can use ready-made connectors without learning how to build one. <a class="cite" href="https://support.claude.com/en/articles/12512176-what-are-skills">Skills and MCP</a></p></details>
   </section>
 
@@ -93,7 +86,6 @@
       <tr><th scope="row">Calendar</th><td>“Find a free hour next week for trip planning.”</td><td>Check the time zone and all relevant calendars.</td></tr>
     </tbody></table></div><p class="small">For a concrete example, see Claude’s <a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors">Google Workspace connector guide</a>.</p>
     <details><summary>Connect your first app in Claude</summary><ol><li>Open Claude’s <strong>Customize → Connectors</strong> area and browse the directory.</li><li>Pick a service you already use. Read its capabilities and permissions.</li><li>Choose <strong>Connect</strong> or <strong>Install</strong>, then sign in to that service.</li><li>Start with a small lookup: ask it to find one non-sensitive document and link the result.</li></ol><p>Availability depends on the connector and account. <a class="cite" href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities">Official setup instructions ↗</a></p></details>
-    <details><summary>Connect an app in ChatGPT/Astra</summary><ol><li>Open <strong>Plugins</strong> in a supported ChatGPT app and search for a service you use, such as Google Drive.</li><li>Read the plugin’s details and select the plus button to install.</li><li>Connect your service account when prompted and review its permissions.</li><li>Start a new chat and ask for a small lookup. You can use <strong>@</strong> to choose the plugin explicitly.</li></ol><p>Some plugins require the desktop app. A model such as Astra uses the tools available in your app; choosing it doesn’t automatically connect your accounts. <a class="cite" href="https://learn.chatgpt.com/docs/plugins">Official plugin setup ↗</a></p></details>
     <div class="control-note"><h3>Give it the access the task needs.</h3><p>Read access retrieves information. Write access can change things. Review permissions before connecting; choose narrower or read-only access where offered. Keep confirmation controls enabled for sending, deleting, or purchasing. A sentence saying “ask me first” is useful, but it does not replace permission settings.</p><p>Use trusted connectors and skills. Only share information you’re comfortable giving that service; follow school or workplace rules for their data. Review both the AI app’s and connected service’s privacy settings. <a class="cite" href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors">Google connector permissions</a> · <a class="cite" href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Trusted skills</a></p></div>
   </section>
 
@@ -118,19 +110,15 @@
     <div class="chapter-heading"><span class="number">?</span><div><h2>The questions everyone asks.</h2><p>No question is too basic.</p></div></div>
     <details><summary>Is AI the same as Google search?</summary><p>Search helps you find pages. Generative AI creates a response. Some AI apps can also search the web and use those results. A polished answer alone does not tell you whether a live search happened; inspect the sources and the original pages. <a class="cite" href="https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on">Checking AI responses</a></p></details>
     <details><summary>Can it see my email and everything on my phone?</summary><p>It needs a supported connection or another explicit way to access that information, such as a file you upload or a screen you share. Don’t assume a claim like “I checked your inbox” is proof: look for the actual tool result and verify it in the original app. <a class="cite" href="https://support.claude.com/en/articles/8241188-claude-is-producing-links-that-don-t-work-and-falsely-claiming-that-it-has-sent-emails-or-produced-external-documents-what-s-going-on">Claims about tool access</a></p></details>
-    <details><summary>Does a better model mean every answer is right?</summary><p>No. If the answer matters, check it against an independent, reliable source. For health, legal, or financial decisions, involve an appropriate qualified professional. AI can help you prepare questions; it should not be your only authority. <a class="cite" href="https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on">Accuracy limitations</a></p></details>
-    <details><summary>Do I need to pay or learn to code?</summary><p>You can begin by typing in an app; you don’t need programming skills. Try the access you already have before subscribing. Paid plans may add limits or capabilities, but a specific connector or model can have its own requirements. Check the feature you want before paying.</p></details>
+    <details><summary>Can an agent still get things wrong?</summary><p>Yes. Agents can make mistakes while planning, using tools, or interpreting results. If the answer matters, check it against an independent, reliable source. For health, legal, or financial decisions, involve an appropriate qualified professional. AI can help you prepare questions; it should not be your only authority. <a class="cite" href="https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on">Accuracy limitations</a></p></details>
+    <details><summary>Do I need to pay or learn to code?</summary><p>You can begin by typing in an app; you don’t need programming skills. Try the access you already have before subscribing. Paid plans may add limits or capabilities, but a specific tool or connector can have its own requirements. Check the feature you want before paying.</p></details>
 
   </section>
 
   <section id="sources" class="chapter sources">
     <h2>For the extra-curious.</h2><p>This guide uses the official sources below. The everyday examples and learning exercises were written for this guide; they illustrate possibilities, not guaranteed outputs. Product details checked September 10, 2026. Older engineering articles support the concepts, not current plan availability.</p>
     <details><summary>Read the sources &amp; go a little deeper</summary><ol>
-      <li>Anthropic. <a href="https://support.claude.com/en/articles/8114491-get-started-with-claude">Get started with Claude</a>. June 2, 2026. Starting a conversation and age requirement.</li>
-      <li>OpenAI. <a href="https://learn.chatgpt.com/docs/quickstart">ChatGPT Quickstart</a>. Living documentation. Chat and Work setup.</li>
-      <li>OpenAI. <a href="https://learn.chatgpt.com/docs/skills-and-plugins">Skills &amp; Plugins</a> and <a href="https://learn.chatgpt.com/docs/plugins">Plugins</a>. Living documentation. Reusable instructions and connecting tools in ChatGPT.</li>
-      <li>OpenAI. <a href="https://learn.chatgpt.com/docs/models">Models</a>. Living documentation. GPT-6 Astra and account-dependent availability.</li>
-
+      <li>Anthropic. <a href="https://support.claude.com/en/articles/8114491-get-started-with-claude">Get started with Claude</a>. June 2, 2026. Starting a conversation and refining requests.</li>
 
       <li>Anthropic. <a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents</a>. December 19, 2024. Agents, workflows, and when simpler approaches suffice.</li>
       <li>Anthropic. <a href="https://www.anthropic.com/engineering/multi-agent-research-system">How we built our multi-agent research system</a>. June 13, 2025. Delegation and coordination costs; findings concern Anthropic’s research system, not every AI product.</li>

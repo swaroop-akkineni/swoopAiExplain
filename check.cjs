@@ -8,8 +8,10 @@ const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 assert.equal(new Set(ids).size, ids.length, 'IDs must be unique');
 for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(id), `Missing anchor ${id}`);
 assert.equal((html.match(/<h1\b/g) || []).length, 1);
-assert(html.includes('GPT-6 Astra'));
-assert(!html.includes('Project Astra'));
+assert(!/astra|codex|chatgpt/i.test(html), 'Keep the guide focused on concepts');
+for (const concept of ['agent', 'skill', 'connector', 'subagent']) {
+  assert(ids.includes(`concept-${concept}`), `Missing concept ${concept}`);
+}
 
 (async () => {
   for (const blocked of [false, true]) {
@@ -36,7 +38,7 @@ assert(!html.includes('Project Astra'));
       assert.match(status.textContent, /^Copied!/);
     }
   }
-  console.log('PASS: page anchors, Astra scope, and clipboard success/fallback.');
+  console.log('PASS: page anchors, concept scope, and clipboard success/fallback.');
 })().catch(error => { console.error(error); process.exitCode = 1; });
 
 // WCAG normal-text contrast, including the muted text and selected controls.
