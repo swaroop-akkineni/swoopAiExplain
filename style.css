@@ -5,3 +5,5 @@
 @media print{.masthead nav,.roadmap,.copy,.button,footer,.concept-picker{display:none}.hero,.comparison,.explorer{display:block}.concept-panel{display:block!important;padding:15px 0}.chapter{padding:25px 0}main,.masthead{width:100%}details>*{display:block!important}h1{font-size:32px}h2{font-size:25px}a{color:inherit}.prompt{grid-template-columns:180px 1fr}.sources details{content-visibility:visible}}
 
 .learning-goals{padding:30px 0 0}.learning-goals h2{font-family:inherit;font-size:1rem;letter-spacing:0;font-weight:600}.learning-goals ul{padding-left:20px;font-size:.93rem;color:var(--muted);margin:12px 0}.learning-goals li{margin:5px 0}.recall{margin:30px 0;border-top:2px solid var(--green);padding-top:24px;max-width:880px}.recall>p{font-size:.95rem}.recall details{margin-bottom:20px}.revisit{margin-top:24px;max-width:850px;font-size:.94rem}.copy{min-height:44px}
+
+#concepts{padding-top:44px}#concepts h1{font-size:clamp(2.2rem,4vw,3.3rem)}

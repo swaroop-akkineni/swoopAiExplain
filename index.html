@@ -13,52 +13,11 @@
 <a class="skip" href="#main">Skip to guide</a>
 <header class="masthead">
   <a class="brand" href="#">swoop<span> / ai, explained</span></a>
-  <nav aria-label="Main navigation"><a href="#start">Start here</a><a href="#concepts">The big ideas</a><a href="#connectors">Connectors</a><a href="#try" class="nav-cta">Try it yourself <span aria-hidden="true">↗</span></a></nav>
+  <nav aria-label="Main navigation"><a href="#concepts">The four concepts</a><a href="#ask">Prompt tips</a><a href="#connectors">Connectors</a><a href="#try" class="nav-cta">Try it yourself <span aria-hidden="true">↗</span></a></nav>
 </header>
 <main id="main">
-  <section class="hero" aria-labelledby="title">
-    <div>
-      <h1 id="title">A little less mystery.<br>A lot more <em>“oh, I get it.”</em></h1>
-      <p class="intro">Agents, skills, subagents, and connectors: four ideas that explain how AI can help with everyday tasks. Let’s make sense of them with a family trip—and see where you stay in charge.</p>
-      <a class="button" href="#start">Let’s start simple <span aria-hidden="true">↓</span></a>
-      <p class="small">For the curious cousins. No technical background needed.</p>
-    </div>
-    <aside class="first-example" aria-label="An example conversation">
-      <p class="example-label">It starts with a normal question.</p>
-      <p class="speaker">YOU</p>
-      <blockquote>I have rice, eggs, and 20 minutes. What can I make?</blockquote>
-      <p class="speaker">AI · ILLUSTRATIVE RESPONSE</p>
-      <p>Egg fried rice could work. Do you have a pan and some oil? I can walk you through it.</p>
-      <div class="example-end">That’s a prompt. You already know how to write one.</div>
-    </aside>
-  </section>
-
-  <nav class="roadmap" aria-label="Learning path">
-    <a href="#start"><span>01</span> Start with a task</a>
-    <a href="#ask"><span>02</span> Ask a good question</a>
-    <a href="#concepts"><span>03</span> Meet the tools</a>
-    <a href="#connectors"><span>04</span> Connect your apps</a>
-    <a href="#try"><span>05</span> Give it a go</a>
-  </nav>
-
-  <aside class="learning-goals" aria-labelledby="goals-title"><h2 id="goals-title">By the end, you’ll be able to…</h2><ul><li>Ask AI for something useful and improve the answer.</li><li>Explain agents, skills, subagents, and connectors in your own words.</li><li>Choose what to share, what to approve, and what to double-check.</li></ul><p class="small">Take one section at a time. The extra details are there when you want them.</p></aside>
-
-  <section id="start" class="chapter">
-    <div class="chapter-heading"><span class="number">01</span><div><h2>Start with a task.</h2><p>Think of something you’d like help with, such as organizing a family trip.</p></div></div>
-    <div class="prose"><p>Think of an AI assistant as a flexible helper for explaining, drafting, and organizing. You give it a request; it creates a response using what it has learned and the information available in the conversation. The tools available in your AI app determine whether it can search, read a file, or take an action. An agent can work through the steps, a skill provides a reusable method, a subagent handles a smaller task, and a connector provides access to another app. We’ll explore each one below.</p><p>It can sound confident and still get things wrong—even quotes and sources. Treat its answer as something to review. <a class="cite" href="https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on">Why mistakes happen ↗</a></p></div>
-  </section>
-
-  <section id="ask" class="chapter">
-    <div class="chapter-heading"><span class="number">02</span><div><h2>Talk naturally. Add the useful details.</h2><p>A prompt is just the request you give the AI.</p></div></div>
-    <div class="prompt-formula" aria-label="Four useful parts of a request"><div><b>The goal</b><span>What do you need?</span></div><span aria-hidden="true">+</span><div><b>The context</b><span>What should it know?</span></div><span aria-hidden="true">+</span><div><b>The limits</b><span>What matters?</span></div><span aria-hidden="true">+</span><div><b>The format</b><span>What should you get?</span></div></div>
-    <div class="comparison"><div><h3>A starting point</h3><p>“Plan a trip.”</p><p class="muted">The AI has to guess almost everything.</p></div><div><h3>A more useful request</h3><p>“Plan a two-day family trip to Chicago. We have a toddler, won’t have a car, and want to spend under $200 on activities. Give me a morning/afternoon schedule. Ask about anything important that’s missing.”</p></div></div>
-    <p>You can keep adjusting: “Less walking.” “Make it shorter.” “Explain that word.” Specific requests and follow-up questions are part of the conversation. <a class="cite" href="https://support.claude.com/en/articles/8114491-get-started-with-claude">Claude’s beginner tips ↗</a></p>
-    <div class="recall"><h3>Your turn: make the request clearer.</h3><p>“Help me study.” What two details would you add? Think of your answer before opening the example.</p><details><summary>See one possible answer</summary><p>“Help me study beginner Spanish for 15 minutes. Quiz me on ordering food, one question at a time, and explain my mistakes.” The topic and time limit give context; the quiz instructions describe the format. Your wording can be different.</p></details></div>
-    <details><summary>What if the first answer is bad?</summary><p>Point to the part that missed: “These activities are too far apart. Keep each day in one neighborhood.” For current facts, ask it to search and link the original sources if web search is available. Open those links yourself. Asking “Are you sure?” is not an independent check.</p></details>
-  </section>
-
   <section id="concepts" class="chapter">
-    <div class="chapter-heading"><span class="number">03</span><div><h2>Four words. One family trip.</h2><p>Imagine asking AI to help organize a weekend away. Select a word to see its job.</p></div></div>
+    <div class="chapter-heading"><div><h1 id="title">Four AI concepts, explained.</h1><p>Agent, skill, connector, subagent. Pick one to see what it does, with a simple example.</p></div></div>
     <div class="explorer">
       <fieldset class="concept-picker"><legend class="visually-hidden">Choose an AI concept</legend>
         <label><input type="radio" name="concept" value="agent" aria-controls="concept-agent" checked><span>Agent <small>The organizer</small></span></label>
@@ -78,7 +37,7 @@
   </section>
 
   <section id="connectors" class="chapter">
-    <div class="chapter-heading"><span class="number">04</span><div><h2>Your apps can join the conversation.</h2><p>The benefit of connectors: less hunting, copying, and switching between windows.</p></div></div>
+    <div class="chapter-heading"><div><h2>Your apps can join the conversation.</h2><p>The benefit of connectors: less hunting, copying, and switching between windows.</p></div></div>
     <div class="comparison"><div><h3>Without a connector</h3><p>You find the document, copy the relevant text, and paste it into the chat. This is often enough for a one-off question.</p></div><div><h3>With a connector</h3><p>You ask the AI to find relevant information in a connected service. Some connections can also make changes. Check each connector’s supported actions. <a class="cite" href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities">Read vs. write access ↗</a></p></div></div>
     <div class="table-wrap"><table><caption>Everyday possibilities, when supported by your connected app</caption><thead><tr><th scope="col">Your app</th><th scope="col">Something to ask</th><th scope="col">What to check</th></tr></thead><tbody>
       <tr><th scope="row">Files &amp; notes</th><td>“Find my trip checklist and summarize what’s left.”</td><td>Did it use the right file and version?</td></tr>
@@ -89,8 +48,17 @@
     <div class="control-note"><h3>Give it the access the task needs.</h3><p>Read access retrieves information. Write access can change things. Review permissions before connecting; choose narrower or read-only access where offered. Keep confirmation controls enabled for sending, deleting, or purchasing. A sentence saying “ask me first” is useful, but it does not replace permission settings.</p><p>Use trusted connectors and skills. Only share information you’re comfortable giving that service; follow school or workplace rules for their data. Review both the AI app’s and connected service’s privacy settings. <a class="cite" href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors">Google connector permissions</a> · <a class="cite" href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Trusted skills</a></p></div>
   </section>
 
+  <section id="ask" class="chapter">
+    <div class="chapter-heading"><div><h2>Talk naturally. Add the useful details.</h2><p>A prompt is just the request you give the AI.</p></div></div>
+    <div class="prompt-formula" aria-label="Four useful parts of a request"><div><b>The goal</b><span>What do you need?</span></div><span aria-hidden="true">+</span><div><b>The context</b><span>What should it know?</span></div><span aria-hidden="true">+</span><div><b>The limits</b><span>What matters?</span></div><span aria-hidden="true">+</span><div><b>The format</b><span>What should you get?</span></div></div>
+    <div class="comparison"><div><h3>A starting point</h3><p>“Plan a trip.”</p><p class="muted">The AI has to guess almost everything.</p></div><div><h3>A more useful request</h3><p>“Plan a two-day family trip to Chicago. We have a toddler, won’t have a car, and want to spend under $200 on activities. Give me a morning/afternoon schedule. Ask about anything important that’s missing.”</p></div></div>
+    <p>You can keep adjusting: “Less walking.” “Make it shorter.” “Explain that word.” Specific requests and follow-up questions are part of the conversation. <a class="cite" href="https://support.claude.com/en/articles/8114491-get-started-with-claude">Claude’s beginner tips ↗</a></p>
+    <div class="recall"><h3>Your turn: make the request clearer.</h3><p>“Help me study.” What two details would you add? Think of your answer before opening the example.</p><details><summary>See one possible answer</summary><p>“Help me study beginner Spanish for 15 minutes. Quiz me on ordering food, one question at a time, and explain my mistakes.” The topic and time limit give context; the quiz instructions describe the format. Your wording can be different.</p></details></div>
+    <details><summary>What if the first answer is bad?</summary><p>Point to the part that missed: “These activities are too far apart. Keep each day in one neighborhood.” For current facts, ask it to search and link the original sources if web search is available. Open those links yourself. Asking “Are you sure?” is not an independent check.</p></details>
+  </section>
+
   <section id="try" class="chapter">
-    <div class="chapter-heading"><span class="number">05</span><div><h2>Your first small win.</h2><p>Pick a prompt, copy it, and paste it into your chosen AI app. Edit the details to make it yours.</p></div></div>
+    <div class="chapter-heading"><div><h2>Prompts to try.</h2><p>Pick a prompt, copy it, and paste it into your chosen AI app. Edit the details to make it yours.</p></div></div>
     <div class="prompt-list">
       <article class="prompt"><div><h3>Learn something new</h3><span class="muted">A patient study partner</span></div><p class="prompt-text">Teach me how Wi-Fi works. I’m a complete beginner. Use an everyday analogy, explain one idea at a time, then ask me one question to check my understanding. Wait for my answer.</p><button type="button" class="copy" aria-label="Copy prompt: Learn something new" hidden>Copy prompt <span aria-hidden="true">↗</span></button></article>
       <article class="prompt"><div><h3>Make dinner easier</h3><span class="muted">Work with what you have</span></div><p class="prompt-text">Help me plan three simple vegetarian dinners for two people. I have rice, chickpeas, and tomatoes, and 30 minutes to cook each night. Give me a short shopping list. Ask about allergies before suggesting recipes.</p><button type="button" class="copy" aria-label="Copy prompt: Make dinner easier" hidden>Copy prompt <span aria-hidden="true">↗</span></button></article>
@@ -103,11 +71,11 @@
       <p><strong>2. An AI organizer asks another AI worker to research venues. Which is the subagent?</strong></p><details><summary>Reveal the explanation</summary><p>The worker researching venues is the <strong>subagent</strong>. The lead <strong>agent</strong> coordinates the bigger task and brings the results together.</p></details>
       <p><strong>3. You connect a calendar to find a free hour. Does that mean you should let it send invitations automatically?</strong></p><details><summary>Reveal the explanation</summary><p>No. Finding availability and sending invitations are different actions. Check the connector’s permissions and confirmation settings. Review guests, dates, and time zones before approving a send.</p></details>
     </div>
-    <div class="practice"><h3>Make it a five-minute experiment.</h3><ol><li><strong>Ask.</strong> Try one prompt in an AI app.</li><li><strong>Adjust.</strong> Change one thing: length, tone, budget, or level of detail.</li><li><strong>Check.</strong> Verify an important detail yourself.</li></ol><p>You’re learning the useful habit: ask, refine, check.</p></div><p class="revisit"><strong>Come back tomorrow:</strong> explain the four terms to someone without looking. Next week, try the same approach on a different task. Revisit any part you couldn’t explain.</p>
+    <div class="practice"><h3>Make it a five-minute experiment.</h3><ol><li><strong>Ask.</strong> Try one prompt in an AI app.</li><li><strong>Adjust.</strong> Change one thing: length, tone, budget, or level of detail.</li><li><strong>Check.</strong> Verify an important detail yourself.</li></ol><p>You’re learning the useful habit: ask, refine, check.</p></div>
   </section>
 
   <section id="questions" class="chapter">
-    <div class="chapter-heading"><span class="number">?</span><div><h2>The questions everyone asks.</h2><p>No question is too basic.</p></div></div>
+    <div class="chapter-heading"><div><h2>The questions everyone asks.</h2><p>No question is too basic.</p></div></div>
     <details><summary>Is AI the same as Google search?</summary><p>Search helps you find pages. Generative AI creates a response. Some AI apps can also search the web and use those results. A polished answer alone does not tell you whether a live search happened; inspect the sources and the original pages. <a class="cite" href="https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on">Checking AI responses</a></p></details>
     <details><summary>Can it see my email and everything on my phone?</summary><p>It needs a supported connection or another explicit way to access that information, such as a file you upload or a screen you share. Don’t assume a claim like “I checked your inbox” is proof: look for the actual tool result and verify it in the original app. <a class="cite" href="https://support.claude.com/en/articles/8241188-claude-is-producing-links-that-don-t-work-and-falsely-claiming-that-it-has-sent-emails-or-produced-external-documents-what-s-going-on">Claims about tool access</a></p></details>
     <details><summary>Can an agent still get things wrong?</summary><p>Yes. Agents can make mistakes while planning, using tools, or interpreting results. If the answer matters, check it against an independent, reliable source. For health, legal, or financial decisions, involve an appropriate qualified professional. AI can help you prepare questions; it should not be your only authority. <a class="cite" href="https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on">Accuracy limitations</a></p></details>
