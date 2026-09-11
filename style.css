@@ -16,7 +16,7 @@ main,.masthead,footer{width:min(1160px,calc(100% - 96px));margin:auto}
 .brand{font-family:Georgia,serif;font-size:1.6rem;font-weight:bold;text-decoration:none;white-space:nowrap}
 .brand span{font-family:system-ui,sans-serif;font-size:.82rem;font-weight:400;color:var(--muted);letter-spacing:0}
 .small{font-size:.82rem;color:var(--muted)}
-.chapter{padding:72px 0;border-bottom:1px solid var(--line);scroll-margin-top:22px}
+.chapter{padding:72px 0;scroll-margin-top:22px}
 .chapter-heading{display:flex;align-items:flex-start;gap:24px;margin-bottom:30px}
 .chapter-heading h2{margin-bottom:12px}
 .chapter-heading p{color:var(--muted);margin:0}
@@ -53,7 +53,7 @@ input,summary{font:inherit}summary,label{cursor:pointer}a,input,summary{touch-ac
 .travel-example{display:grid;grid-template-columns:1.1fr 1fr;gap:54px;margin:28px 0 32px;align-items:start}
 .conversation{border-top:2px solid var(--green);padding-top:8px}.conversation>p{font-size:.96rem}.conversation .speaker{font-size:.68rem;font-weight:650;letter-spacing:.08em;color:var(--green);margin:22px 0 7px}.conversation>p:not(.speaker){margin-bottom:24px}
 .behind-scenes{background:var(--wash);padding:30px}.behind-scenes h3{font-family:Georgia,serif;font-size:1.7rem;font-weight:400}.behind-scenes dl{margin:25px 0}.behind-scenes dt{font-weight:650;color:var(--green);margin-top:24px;line-height:1.45}.behind-scenes dd{margin:8px 0 0;font-size:.94rem}.behind-scenes .takeaway{border-top:1px solid var(--line);padding-top:20px;font-size:.95rem}
-.deal-note{border-left:2px solid var(--green);padding-left:22px;max-width:920px}.research{margin-top:30px}#travel{border-bottom:0}
+.deal-note{border-left:2px solid var(--green);padding-left:22px;max-width:920px}.research{margin-top:30px}
 @media(max-width:950px){main,.masthead,footer{width:calc(100% - 48px)}.travel-example{gap:28px}.behind-scenes{padding:24px}}
 @media(max-width:650px){main,.masthead,footer{width:calc(100% - 36px)}.masthead{min-height:100px;align-items:flex-start;justify-content:center;flex-direction:column;gap:8px;padding:14px 0}.brand{font-size:1.45rem}h1{font-size:2.9rem}.chapter{padding:43px 0}.chapter-heading{gap:16px;margin-bottom:25px}.chapter-heading p{font-size:.94rem}.explorer{grid-template-columns:1fr}.concept-picker{display:grid;grid-template-columns:1fr 1fr;border-right:0;border-bottom:1px solid var(--line)}.concept-picker label{border:0}.concept-picker label>span{padding:14px}.concept-panel{padding:25px 18px}.travel-example{grid-template-columns:1fr;gap:22px}footer{gap:20px;align-items:start}footer a{text-align:right}}
 @media print{footer,.concept-picker{display:none}.explorer,.travel-example{display:block}.concept-panel{display:block!important;padding:15px 0}.chapter{padding:25px 0}main,.masthead{width:100%}details>*{display:block!important}h1{font-size:32px}h2{font-size:25px}a{color:inherit}.research{content-visibility:visible}}
