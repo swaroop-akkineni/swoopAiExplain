@@ -1,9 +1,7 @@
 // Run with: node check.cjs
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const vm = require('node:vm');
 const html = fs.readFileSync(`${__dirname}/index.html`, 'utf8');
-const script = fs.readFileSync(`${__dirname}/script.js`, 'utf8');
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 assert.equal(new Set(ids).size, ids.length, 'IDs must be unique');
 for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(id), `Missing anchor ${id}`);
@@ -15,33 +13,13 @@ for (const concept of ['agent', 'skill', 'connector', 'subagent']) {
   assert(ids.includes(`concept-${concept}`), `Missing concept ${concept}`);
 }
 
-(async () => {
-  for (const blocked of [false, true]) {
-    let handler, copied, selected;
-    const prompt = { textContent: '  Teach me one idea at a time.  ' };
-    const status = {};
-    const button = { hidden: true, addEventListener: (_, fn) => handler = fn,
-      closest: () => ({ querySelector: () => prompt }) };
-    vm.runInNewContext(script, {
-      document: { querySelectorAll: () => [button], getElementById: () => status,
-        createRange: () => ({ selectNodeContents: value => selected = value }) },
-      navigator: { clipboard: { writeText: async text => { if (blocked) throw Error('Denied'); copied = text; } } },
-      window: { getSelection: () => ({ removeAllRanges() {}, addRange() {} }) },
-    });
-    assert.equal(button.hidden, false);
-    await handler();
-    if (blocked) {
-      assert.equal(selected, prompt);
-      assert.equal(button.textContent, 'Text selected');
-      assert.match(status.textContent, /selected/);
-    } else {
-      assert.equal(copied, prompt.textContent.trim());
-      assert.equal(button.textContent, 'Copied ✓');
-      assert.match(status.textContent, /^Copied!/);
-    }
-  }
-  console.log('PASS: page anchors, concept scope, and clipboard success/fallback.');
-})().catch(error => { console.error(error); process.exitCode = 1; });
+assert.deepEqual([...html.matchAll(/<section id="([^"]+)"/g)].map(match => match[1]), ['concepts', 'travel']);
+assert(!/<script\b|class="copy"/.test(html), 'Native controls need no script');
+for (const [, id] of html.matchAll(/aria-controls="([^"]+)"/g)) assert(ids.includes(id), `Missing controlled panel ${id}`);
+assert.match(html, /conversation and prices below are made up/);
+assert.match(html, /flight search, reservations, and payments are simulated/);
+assert.match(html, /https:\/\/soar\.flights\/mcp/);
+console.log('PASS: page anchors, four concepts, travel example, and native controls.');
 
 // WCAG normal-text contrast, including the muted text and selected controls.
 function luminance(hex) {
