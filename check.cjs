@@ -6,11 +6,13 @@ const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 assert.equal(new Set(ids).size, ids.length, 'IDs must be unique');
 for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(id), `Missing anchor ${id}`);
 assert.equal((html.match(/<h1\b/g) || []).length, 1);
-assert.match(html, /<main id="main">\s*<section id="concepts"/, 'Start with the four concepts');
+assert.match(html, /<main id="main">\s*<section id="concepts"/, 'Start with the five concepts');
 assert(!/class="(?:roadmap|number|learning-goals)"/.test(html), 'No numbered learning path');
 assert(!/astra|codex|chatgpt/i.test(html), 'Keep the guide focused on concepts');
-for (const concept of ['agent', 'skill', 'connector', 'subagent']) {
+for (const concept of ['agent', 'skill', 'connector', 'subagent', 'context']) {
   assert(ids.includes(`concept-${concept}`), `Missing concept ${concept}`);
+  assert(html.includes(`value="${concept}" aria-controls="concept-${concept}"`), `Missing selector for ${concept}`);
+  assert(fs.readFileSync(`${__dirname}/style.css`, 'utf8').includes(`input[value="${concept}"]:checked) .concept-panel:not(#concept-${concept})`), `Missing panel switching for ${concept}`);
 }
 
 assert.deepEqual([...html.matchAll(/<section id="([^"]+)"/g)].map(match => match[1]), ['concepts', 'travel', 'working-together']);
@@ -19,7 +21,7 @@ for (const [, id] of html.matchAll(/aria-controls="([^"]+)"/g)) assert(ids.inclu
 assert.match(html, /conversation and prices below are made up/);
 assert.match(html, /flight search, reservations, and payments are simulated/);
 assert.match(html, /https:\/\/soar\.flights\/mcp/);
-console.log('PASS: page anchors, four concepts, travel example, and native controls.');
+console.log('PASS: page anchors, five concepts, travel example, and native controls.');
 
 // WCAG normal-text contrast, including the muted text and selected controls.
 function luminance(hex) {
